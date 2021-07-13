@@ -1,5 +1,16 @@
 So I have implemented my webapp with the help of python-django web-framework and django-channels webRTC and websockets.
 
+Agile methodology :
+    1. First I have desinged the basic structure how I have to integrate django with webRTC and webSockets
+    2. Then I came up with what functionalities I have to add to the chat.
+    3. Implemented peer to peer connection an checked that video connections are working fine.
+    4. Then implemented Audio and Video Toggle functions.
+    5. Then I begin to build my accounts section of the webapp in which I implemented django-auth system
+    6. Then I designed my app with the help of css, javascript and bootstrap.
+    7. At last at the time of adapt phase I implemented chat functionality which was actually very easy for
+       me beacuse of webRTC and webSockets.
+    8. At last I make my website responsive to look good in all kind of devices
+
 
 Directory structure:
 Root
@@ -49,3 +60,6 @@ How peer to peer connection is established??
         5. new peer recieves each offer sdp and send the responses(answer sdp for each offer).
         6. other peers receive answer spds.
         7. New peer is connected!
+
+ThankYou for reading!!!
+Made by: Prayanshu Agarwal
