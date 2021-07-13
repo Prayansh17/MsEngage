@@ -32,5 +32,13 @@ Running the webapp on local machine:
     13. Join the room with different joining names and the users will be connected.
 
 
+For testing on multiple devices using same LAN. For that we need to make our localhost public. For that, download ngrok from https://ngrok.com/download and install it.
+
+For testing on multiple devices in the same LAN, go to the directory where you have installed ngrok.
+Run the command: ngrok.exe http 8000
+This will make our localhost public and provide two public URLs. However, make sure to always use the one that starts with https: and not http: as we will be accessing media devices.
+
 It is requested to please read Explaination.txt file to understand the full structure of the project and
 how it is implemented.
+
+For any kind of error refer to console in the browser.
