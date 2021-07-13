@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="index1 container-fluid">
+        <div class="index2 row">
+            <div class="left1 col-lg-6">
+                <div class="row">
+                    <h1 class="heading">Microsoft Teams Clone</h1>
+                    <h2>Meet, chat, call, and collaborate in <br> just one place.</h2>
+                </div>
+                <div class="join-button row">
+                    {% if user.is_authenticated %}
+                        <a href="{%url 'chat'%}" style="color:white">Join Room</a>
+                    {% else %}
+                        <a href="{%url 'accounts:login' %}" style="color:white">Join Room</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWDeEK?ver=e1e6&q=90&m=2&h=768&w=1024&b=%23FFFFFFFF&aim=true" alt="Not available">
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

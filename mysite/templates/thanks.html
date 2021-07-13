@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+    <div class="index1 container-fluid">
+        <div class="index2 row">
+            <div class="">
+                <h1>Thanks for visiting.Come back soon</h1>
+            </div>
+            <div class="join-button">
+                {% if user.is_authenticated %}
+                  <a href="{% url 'chat'%}"  style="color:white;">Join room again</a>
+                {% else %}
+                  <a href="{% url 'accounts:login'%}"  style="color:white;">Join room again</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row name">
+            <h4>Designed by: Prayanshu Agarwal</h4>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Teams clone</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {# <meta name="viewport" content="width=device-width, initial-scale=1"> #}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/01c8ff3354.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top sticky" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <h3 id="label-username">WELCOME</h3>
+            </div>
+            <button class="chatbutton" type="button" onclick="document.getElementById('chatbox').style.display='flex'">Chat</button>
+            <div class="join">
+                <input id="username" name="" placeholder="Enter your joining name"><button id="btn-join" type="button" name="button">Join Room</button>
+            </div>
+
+          </div>
+        </nav>
+        {# {% if user.is_authenticated %} #}
+                <div class="container-fluid">
+                    <div class="row no-gutter">
+                        <div class="video-section col-lg-9">
+                            <div class="video1 row">
+                                <div class="inner" id="video-container">
+                                    <div class="videostream"><video id="local-video" autoplay playsinline></video></div>
+                                </div>
+                            </div>
+                            <div class="button1 row">
+                                <button class="bt1" id="btn-toggle-audio" type="button" name="button"><i class="fas fa-microphone fa-lg" style="color:white;font-size:18px;"></i></button>
+                                <button class="bt1" id="btn-toggle-video" type="button" name="button"><i class="fas fa-video fa-lg" style="color:white;font-size:18px;"></i></button>
+                                <button class="bt1 bt3" type="button" name="button"><a href="{% url 'thanks' %}"><i class="material-icons" style="font-size:30px;color:white">call_end</i></a></button>
+                            </div>
+                        </div>
+                        <div class="chat-section col-lg-3" >
+                            <div class="card" id="chatbox">
+                                <div class="card-header text-center">
+                                    <span>Chat Box</span>
+                                </div>
+                                <div id="messages" class="card-body chat-care">
+                                    <ul class="chat" id="message-list"></ul>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" id="btn-chat">
+                                                Send</button>
+                                        </span>
+                                    </div>
+                                    <div class="close">
+                                        <button class="btn btn-danger" type="button"  onclick="document.getElementById('chatbox').style.display='none'" style="background-color:#bd1004;">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        {# {% endif %} #}
+            {% comment %} <div id="chat">
+                <h3 id="name-chat">CHAT</h3>
+                <div id="messages">
+                    <ul id="message-list"></ul>
+                </div>
+                <div class="card-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" id="btn-chat">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+        <script type="text/javascript" src="{% static 'js/main.js' %}">
+
+        </script>
+    </body>
+</html>
