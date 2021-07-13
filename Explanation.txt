@@ -1,31 +1,31 @@
 So I have implemented my webapp with the help of python-django web-framework and django-channels webRTC and websockets.
 
 Agile methodology :
-    1. First I have desinged the basic structure how I have to integrate django with webRTC and webSockets
-    2. Then I came up with what functionalities I have to add to the chat.
+    1. First I have designed the basic structure how I have to integrated django with webRTC and webSockets
+    2. Then I came up with what functionalities I have to add to the chat webapp.
     3. Implemented peer to peer connection an checked that video connections are working fine.
     4. Then implemented Audio and Video Toggle functions.
-    5. Then I begin to build my accounts section of the webapp in which I implemented django-auth system
-    6. Then I designed my app with the help of css, javascript and bootstrap.
+    5. Then I begin to build my accounts section webapp in which I implemented django-auth system
+    6. Then I designed my website with the help of css, javascript and bootstrap.
     7. At last at the time of adapt phase I implemented chat functionality which was actually very easy for
-       me beacuse of webRTC and webSockets.
+       me because of webRTC and webSockets.
     8. At last I make my website responsive to look good in all kind of devices
 
 
 Directory structure:
 Root
    --mysite
-       --accounts(webapp used for accounts(django authenticaton system)
-                  Using can find login and Signup html files under templates of this app which are extended from
+       --accounts (webapp used for accounts(django authenticaton system)
+                  You can find login and Signup html files under templates of this app which are extended from
                   base.html in main directory using template rendering.
                   Signup and html views and urls can be found in views.py and urls.py which are further included
                   in main website urls in mysite.
                 )
        --chat (This is the webapp actually used for creating the video call functionality using django-channels
                 and websockets and you can find all the users views in consumers.py file which is pretty much
-                similar to views.py(consumers is used specially for django channels)
+                similar to views.py(consumers is used specially for django-channels)
                 )
-       --mysite(this is main website project through which website starts)
+       --mysite (this is main website project through which website starts)
             ---asgi.py ((Asynchronous Server Gateway Interface : to unite channels with django apps)
             ---settings.py (all the settings regarding the hosts, apps, urls_configs, databases and integration of
                             static and templates files to the apps).
@@ -45,11 +45,11 @@ Root
 
 
 How peer to peer connection is established??
-    Session description protocol(SDP) : Information about a peerthat other peer needs in order to make peer-to-peer
+    Session description protocol(SDP) : Information about a peer that other peer needs in order to make peer-to-peer
                                         connection.
     Signalling (using django server) required to exchange sdps.
     Both peers connect to signalling server using websocket.
-    After SDPs are exhanged from both sides, p2p connection can be established.
+    After SDPs are exchanged from both sides, p2p connection can be established.
     Signalling is not required afterwards
 
     How it functions??
@@ -57,7 +57,7 @@ How peer to peer connection is established??
         2. send message to all others peers.
         3. all other peers get notified of new peer (message in console).
         4. each existing peer initiates peer connection with new peer(offer sdp).
-        5. new peer recieves each offer sdp and send the responses(answer sdp for each offer).
+        5. new peer receives each offer sdp and send the responses(answer sdp for each offer).
         6. other peers receive answer spds.
         7. New peer is connected!
 

@@ -3,10 +3,11 @@ This is Microsoft Teams Clone Project made for Microsoft Engage program.
 Description : This project is made by signaling WebRTC SDPs using websockets and django-channels
               to make multi-peer video conferencing website.
 
-Go to the desired folder and run the command --
+Go to the desired folder and run the command -- git clone https://github.com/Prayansh17/MsEngage.git
+                        (or directly download zip folder)
 
 
-A machine is required with latest version of python(3.9) installed in it.
+A machine is required with latest version of python(3.9) installed in it(anaconda is preferable)
 
 Running the webapp on local machine:
 
